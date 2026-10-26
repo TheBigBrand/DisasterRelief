@@ -2,7 +2,10 @@
 
 
 ## 📝 Project Overview
-[**Instruction for Technical Writer:** Delete this note and insert exactly three (3) active-voice sentences here. Sentence 1 must explicitly define the social, environmental, or economic problem. Sentence 2 must state how your target audience experiences this issue. Sentence 3 must describe exactly how your RESTful API systematically addresses or resolves this specific challenge.]
+Natural and man-made disasters are an ongoing problem of the current world.
+People are left on their own often without supplies or medical help.
+Our project and API aim to resolve this issue by providing methods for
+sending out support vehicles and monitoring the progress of the disaster's relief.
 
 ---
 
@@ -11,7 +14,7 @@ To run this application locally, ensure your machine meets the minimum version c
 
 *   **Language & Runtime:** [Java]
 *   **Web Framework:** [Spring Boot]
-*   **Database:** [PostgreSQL v15.3]
+*   **Database:** [PostgreSQL]
 *   **Production Dependencies:**
     *   `spring-boot-starter-data-jpa` - Communication with the database.
     *   `spring-boot-starter-webmvc` - Managing endpoints.
@@ -19,41 +22,28 @@ To run this application locally, ensure your machine meets the minimum version c
 ---
 
 ## 🚀 Installation & Setup
-[**Instruction for Technical Writer:** You are graded heavily on the usage of the **imperative mood** here. Ensure every step begins with a clear, active command verb like *Clone, Install, Initialize, or Run*.]
-
 Follow these precise steps to provision your local development environment:
 
 1. **Clone** the remote repository from GitHub:
    ```bash
-   git clone https://github.com
-   cd your-repo-name
+   git clone https://github.com/TheBigBrand/DisasterRelief
+   cd DisasterRelief
    ```
 
-2. **Install** all required production and development dependencies:
-   ```bash
-   npm install
-   # OR if using python: pip install -r requirements.txt
-   ```
-
-3. **Configure** your environment variables by copying the template file:
+2. **Configure** your environment variables by copying the template file:
    ```bash
    cp .env.example .env
    ```
    *(Open the newly created `.env` file and insert your local database credentials).*
 
-4. **Initialize** the database schema migrations:
-   ```bash
-   npm run db:migrate
-   ```
-
-5. **Start** the local development server:
-   ```bash
-   npm run dev
-   ```
+5. **Start** the application (through an IDE).
 
 ---
 
 ## 📖 API Reference Guide
+
+## TO DO
+
 All request payloads and response bodies must strictly communicate via valid JSON.
 
 | HTTP Method | URL Path | Required JSON Payload Keys | Expected Status | Description / Purpose |
@@ -64,6 +54,9 @@ All request payloads and response bodies must strictly communicate via valid JSO
 | `DELETE` | `/api/v1/resources/:id` | None | `204 No Content` | Removes a corrupted or duplicate entry from the live database. |
 
 ### 🛑 Standard Error Handling Response
+
+## TO DO
+
 When data validation fails or unexpected edge cases occur, the API guarantees a unified response schema:
 
 ```json
