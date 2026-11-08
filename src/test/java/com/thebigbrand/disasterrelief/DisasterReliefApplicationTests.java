@@ -1,4 +1,4 @@
-package me.mmtr.disasterrelief;
+package com.thebigbrand.disasterrelief;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
