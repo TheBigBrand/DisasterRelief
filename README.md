@@ -68,4 +68,16 @@ When data validation fails or unexpected edge cases occur, the API guarantees a 
 }
 ```
 
+---
+
+## External review of the code:
+
+After a deep analysis of your code.
+Our team of independent experts have not found any major problems with your code base.
+However we have some questions about the AddOrUpdateSupply function. Since you already have the
+Update funtion right below it what was the reason for naming it 'AddOrUpdateSupply' instead of
+simply naming it AddSupply?
+Another minor infringment is that your team is using @DATA annotation in your DTO whilst the
+Record Java Type is a more modern and safer practice as it increases safety and reduces the
+possibility of errors.
 
