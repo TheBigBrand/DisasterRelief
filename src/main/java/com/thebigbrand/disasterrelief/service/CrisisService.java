@@ -24,10 +24,10 @@ public class CrisisService {
     @Transactional
     public Incident createIncident(CreateIncidentRequest request) {
         Incident incident = Incident.builder()
-                .location(request.getLocation())
-                .description(request.getDescription())
-                .requiredSupplyType(request.getRequiredSupplyType())
-                .requiredSuppliesQuantity(request.getRequiredSuppliesQuantity())
+                .location(request.location())
+                .description(request.description())
+                .requiredSupplyType(request.requiredSupplyType())
+                .requiredSuppliesQuantity(request.requiredSuppliesQuantity())
                 .status(IncidentStatus.REPORTED)
                 .build();
         return incidentRepository.save(incident);
@@ -42,8 +42,8 @@ public class CrisisService {
         Incident incident = incidentRepository.findById(incidentId)
                 .orElseThrow(() -> new EntityNotFoundException("Incident not found with id: " + incidentId));
 
-        Vehicle vehicle = vehicleRepository.findById(request.getVehicleId())
-                .orElseThrow(() -> new EntityNotFoundException("Vehicle not found with id: " + request.getVehicleId()));
+        Vehicle vehicle = vehicleRepository.findById(request.vehicleId())
+                .orElseThrow(() -> new EntityNotFoundException("Vehicle not found with id: " + request.vehicleId()));
 
         if (vehicle.getStatus() != VehicleStatus.AVAILABLE) {
             throw new IllegalStateException("Vehicle is not available for dispatch");
@@ -70,10 +70,10 @@ public class CrisisService {
     @Transactional
     public Incident updateIncident(Long id, CreateIncidentRequest request) {
         Incident incident = getIncidentById(id);
-        incident.setLocation(request.getLocation());
-        incident.setDescription(request.getDescription());
-        incident.setRequiredSupplyType(request.getRequiredSupplyType());
-        incident.setRequiredSuppliesQuantity(request.getRequiredSuppliesQuantity());
+        incident.setLocation(request.location());
+        incident.setDescription(request.description());
+        incident.setRequiredSupplyType(request.requiredSupplyType());
+        incident.setRequiredSuppliesQuantity(request.requiredSuppliesQuantity());
         return incidentRepository.save(incident);
     }
 
@@ -94,7 +94,7 @@ public class CrisisService {
     }
 
     @Transactional
-    public Supply addOrUpdateSupply(Supply supply) {
+    public Supply addSupply(Supply supply) {
         return supplyRepository.save(supply);
     }
 

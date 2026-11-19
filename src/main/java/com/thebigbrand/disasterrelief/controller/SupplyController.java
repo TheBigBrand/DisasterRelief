@@ -35,7 +35,7 @@ public class SupplyController {
 
     @PostMapping
     public ResponseEntity<Supply> createSupply(@Valid @RequestBody Supply supply) {
-        Supply created = crisisService.addOrUpdateSupply(supply);
+        Supply created = crisisService.addSupply(supply);
         return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }
 
