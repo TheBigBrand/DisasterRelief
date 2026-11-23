@@ -42,8 +42,6 @@ Follow these precise steps to provision your local development environment:
 
 ## 📖 API Reference Guide
 
-## TO DO
-
 All request payloads and response bodies must strictly communicate via valid JSON.
 
 | HTTP Method | URL Path | Required JSON Payload Keys | Expected Status | Description / Purpose |
@@ -54,8 +52,6 @@ All request payloads and response bodies must strictly communicate via valid JSO
 | `DELETE` | `/api/v1/resources/:id` | None | `204 No Content` | Removes a corrupted or duplicate entry from the live database. |
 
 ### 🛑 Standard Error Handling Response
-
-## TO DO
 
 When data validation fails or unexpected edge cases occur, the API guarantees a unified response schema:
 
